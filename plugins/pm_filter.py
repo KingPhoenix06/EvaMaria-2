@@ -22,7 +22,7 @@ from database.filters_mdb import (
     get_filters,
 )
 import logging
-from genlink import *
+from tamilgram import *
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
