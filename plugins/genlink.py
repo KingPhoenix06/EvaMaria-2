@@ -4,7 +4,6 @@ from pyrogram.errors.exceptions.bad_request_400 import ChannelInvalid, UsernameI
 from info import ADMINS, LOG_CHANNEL, FILE_STORE_CHANNEL, PUBLIC_FILE_STORE
 from database.ia_filterdb import unpack_new_file_id
 from utils import temp
-from shortzy import shortzy
 import re
 import os
 import json
@@ -124,14 +123,3 @@ async def gen_link_batch(bot, message):
     os.remove(f"batchmode_{message.from_user.id}.json")
     file_id, ref = unpack_new_file_id(post.document.file_id)
     await sts.edit(f"Here is your link\nContains `{og_msg}` files.\n https://t.me/{temp.U_NAME}?start=BATCH-{file_id}")
-
-##
-
-SHORTENER_WEBSITE_API = os.environ.get("SHORTENER_WEBSITE_API")
-SHORTENER_WEBSITE = os.environ.get("SHORTENER_WEBSITE")
-
-##
-async def get_shortlink(url):
-    if SHORTENER_WEBSITE_API and SHORTENER_WEBSITE:
-        shortzy = Shortzy(SHORTENER_WEBSITE_API, SHORTENER_WEBSITE)
-        return await shortzy.convert(url)
