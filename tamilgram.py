@@ -1,7 +1,6 @@
 #### tamilgram ####
 import re
 import os
-from shortzy import shortzy
 
 ##
 
