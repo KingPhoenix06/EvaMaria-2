@@ -27,8 +27,14 @@ logger.setLevel(logging.ERROR)
 
 BUTTONS = {}
 SPELL_CHECK = {}
+PM_FILE_TEXT = f""" 
+Title : {file.file_name} 
 
+File Size : {get_size(file.file_size)}
 
+Powered By : @AMD_LinkZz """
+
+PM_BUTTON_LINK = 
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client,message):
